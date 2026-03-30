@@ -1,0 +1,28 @@
+{
+  "name": "TizenFlix-tv",
+  "appName": "TizenFlix",
+  "version": "1.0.0",
+  "description": "Module TizenBrew qui transforme flemmix.golf en experience Netflix-like pour Samsung TV.",
+  "packageType": "mods",
+  "websiteURL": "https://flemmix.golf",
+  "main": "dist/userScript.js",
+  "serviceFile": "dist/service.js",
+  "keys": [
+    "MediaPlayPause",
+    "MediaPlay",
+    "MediaPause",
+    "MediaStop",
+    "MediaFastForward",
+    "MediaRewind",
+    "MediaTrackNext",
+    "MediaTrackPrevious"
+  ],
+  "scripts": {
+    "build": "cd mods && npm install && npm run build && cd ../service && npm install && npm run build",
+    "build:mods": "cd mods && npm run build",
+    "build:service": "cd service && npm run build",
+    "dev:mods": "cd mods && npm run dev",
+    "dev:inject": "node dev/dev-server.js"
+  },
+  "license": "MIT"
+}

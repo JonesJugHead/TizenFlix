@@ -1,0 +1,1135 @@
+/* ============================================================
+   NETFLIX THEME - Design principal FlemmixTV
+   ============================================================ */
+
+/* Variables */
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --bg-tertiary: #1a1a1a;
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-muted: #808080;
+  --accent: #e50914;
+  --accent-hover: #f40612;
+  --focus-ring: #ffffff;
+  --focus-glow: rgba(255, 255, 255, 0.4);
+  --card-bg: #181818;
+  --badge-vf: #46d369;
+  --badge-vostfr: #ffa500;
+  --badge-exclu: #e50914;
+  --skeleton-base: #1a1a1a;
+  --skeleton-shine: #2a2a2a;
+  --row-padding: 4%;
+  --card-width: 160px;
+  --card-height: 240px;
+  --card-gap: 8px;
+  --header-height: 60px;
+  --border-radius: 6px;
+  --top10-number: #d12f2f;
+}
+
+/* ============================================================
+   GLOBAL APP WRAPPER
+   ============================================================ */
+
+.flx-app {
+  font-family: "Lexend", sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.flx-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: var(--header-height) !important;
+  z-index: 1000 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  padding: 0 var(--row-padding) !important;
+  background: transparent !important;
+  transition: background 0.3s ease !important;
+  gap: 18px !important;
+}
+
+.flx-header.flx-header--scrolled {
+  background: var(--bg-primary) !important;
+}
+
+.flx-logo {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  color: var(--accent) !important;
+  text-decoration: none !important;
+  letter-spacing: -1px !important;
+  flex-shrink: 0 !important;
+  display: none !important;
+}
+
+.flx-search {
+  flex: 0 1 420px !important;
+  width: min(420px, 52vw) !important;
+  max-width: 52vw !important;
+  position: relative !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  float: none !important;
+  z-index: 2 !important;
+  border-radius: 999px !important;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.07),
+    rgba(255, 255, 255, 0.03)
+  ) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding: 2px !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 8px 24px rgba(0, 0, 0, 0.28) !important;
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease !important;
+}
+
+.flx-header .search-box,
+.flx-header .flx-search {
+  position: relative !important;
+  left: 0 !important;
+  right: auto !important;
+}
+
+.flx-search form,
+.flx-search .search-form {
+  width: 100% !important;
+  display: block !important;
+}
+
+.flx-search input[type="text"],
+.flx-search input[type="search"] {
+  width: 100% !important;
+  background: rgba(8, 8, 8, 0.78) !important;
+  border: 1px solid transparent !important;
+  border-radius: 999px !important;
+  padding: 10px 14px 10px 40px !important;
+  color: var(--text-primary) !important;
+  font-family: "Lexend", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  outline: none !important;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s !important;
+}
+
+.flx-search input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.flx-search input:focus {
+  background: rgba(12, 12, 12, 0.95) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow:
+    0 0 0 2px rgba(229, 9, 20, 0.45),
+    0 0 20px rgba(229, 9, 20, 0.3) !important;
+}
+
+.flx-search:focus-within {
+  border-color: rgba(229, 9, 20, 0.7) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 0 1px rgba(229, 9, 20, 0.45),
+    0 12px 30px rgba(229, 9, 20, 0.24) !important;
+}
+
+.flx-search::before {
+  content: "🔍" !important;
+  position: absolute !important;
+  left: 10px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  font-size: 14px !important;
+  pointer-events: none !important;
+}
+
+.flx-profile {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  color: var(--text-primary) !important;
+  text-decoration: none !important;
+  font-family: "Lexend", sans-serif !important;
+  font-size: 14px !important;
+  flex-shrink: 0 !important;
+}
+
+.show-login.flx-profile,
+.flx-header #loginbtn {
+  display: none !important;
+}
+
+/* ============================================================
+   HERO BANNER (page accueil)
+   ============================================================ */
+
+.flx-hero {
+  position: relative !important;
+  width: 100% !important;
+  min-height: min(80vh, 600px) !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  overflow: hidden !important;
+  margin-top: 0 !important;
+}
+
+.flx-hero__backdrop {
+  position: absolute !important;
+  inset: 0 !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  filter: blur(0px) brightness(0.6) !important;
+  transform: scale(1.05) !important;
+}
+
+.flx-hero__gradient {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 40%,
+    rgba(10, 10, 10, 0.7) 70%,
+    var(--bg-primary) 100%
+  ) !important;
+}
+
+.flx-hero__gradient-left {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0.8) 0%,
+    rgba(10, 10, 10, 0.4) 40%,
+    transparent 70%
+  ) !important;
+}
+
+.flx-hero__content {
+  position: relative !important;
+  z-index: 1 !important;
+  padding: 0 var(--row-padding) 60px !important;
+  max-width: 640px !important;
+}
+
+.flx-hero__title {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 52px !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 16px !important;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+.flx-hero__meta {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin: 0 0 14px !important;
+}
+
+.flx-hero__meta-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  color: var(--text-secondary) !important;
+  background: rgba(20, 20, 20, 0.72) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+.flx-hero__meta-chip--rating {
+  color: #f6d87a !important;
+  border-color: rgba(246, 216, 122, 0.45) !important;
+}
+
+.flx-hero__synopsis {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  color: var(--text-secondary) !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  margin: 0 0 24px !important;
+}
+
+.flx-hero__actions {
+  display: flex !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+.flx-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 12px 28px !important;
+  border-radius: 4px !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  border: none !important;
+  transition:
+    background 0.2s,
+    transform 0.15s !important;
+  white-space: nowrap !important;
+}
+
+.flx-btn--play {
+  background: var(--text-primary) !important;
+  color: #000 !important;
+}
+
+.flx-btn--play:hover,
+.flx-btn--play.flx-focused {
+  background: rgba(255, 255, 255, 0.85) !important;
+}
+
+.flx-btn--info {
+  background: rgba(109, 109, 110, 0.7) !important;
+  color: var(--text-primary) !important;
+}
+
+.flx-btn--info:hover,
+.flx-btn--info.flx-focused {
+  background: rgba(109, 109, 110, 0.5) !important;
+}
+
+/* ============================================================
+   ROWS (sections horizontales)
+   ============================================================ */
+
+.flx-rows {
+  padding-top: var(--header-height) !important;
+}
+
+.flx-row {
+  margin-bottom: 32px !important;
+  position: relative !important;
+}
+
+.flx-row--top10 .flx-row__title,
+.flx-row--trending .flx-row__title {
+  letter-spacing: 0.2px !important;
+}
+
+.flx-row__header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 var(--row-padding) !important;
+  margin-bottom: 12px !important;
+}
+
+.flx-row__title {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+  margin: 0 !important;
+  text-decoration: none !important;
+}
+
+.flx-row__see-all {
+  font-size: 14px !important;
+  color: var(--accent) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: color 0.2s !important;
+  white-space: nowrap !important;
+  margin-left: 16px !important;
+}
+
+.flx-row__see-all:hover,
+.flx-row__see-all.flx-focused {
+  color: var(--accent-hover) !important;
+}
+
+.flx-row__track {
+  display: flex !important;
+  gap: var(--card-gap) !important;
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  padding: 12px var(--row-padding) !important;
+  scroll-snap-type: x mandatory !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: none !important;
+}
+
+.flx-row__track::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+
+.flx-card {
+  flex-shrink: 0 !important;
+  width: var(--card-width) !important;
+  height: var(--card-height) !important;
+  border-radius: var(--border-radius) !important;
+  overflow: visible !important;
+  position: relative !important;
+  scroll-snap-align: start !important;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    z-index 0s 0.25s !important;
+  will-change: transform !important;
+  outline: none !important;
+}
+
+.block-main,
+.block-main::before,
+.block-main::after,
+.block-main .block-title,
+.block-main .block-inside,
+.block-main .mov {
+  border: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+.flx-card--top10 {
+  width: 185px !important;
+  height: 275px !important;
+}
+
+.flx-card a {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.flx-card__poster-wrap {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: var(--border-radius) !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.flx-card__poster {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.3s ease !important;
+}
+
+.flx-card__overlay {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9)) !important;
+  padding: 24px 8px 8px !important;
+  opacity: 0 !important;
+  transition: opacity 0.25s ease !important;
+  border-radius: 0 0 var(--border-radius) var(--border-radius) !important;
+}
+
+.flx-card__rank {
+  position: absolute !important;
+  left: 6px !important;
+  bottom: 0 !important;
+  z-index: 2 !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 118px !important;
+  font-weight: 800 !important;
+  line-height: 0.8 !important;
+  color: var(--top10-number) !important;
+  text-shadow:
+    -2px -2px 0 #111,
+    2px -2px 0 #111,
+    -2px 2px 0 #111,
+    2px 2px 0 #111,
+    0 0 18px rgba(0, 0, 0, 0.55) !important;
+  transform: translateX(-42%) !important;
+  pointer-events: none !important;
+}
+
+.flx-card--top10 .flx-card__poster-wrap {
+  overflow: visible !important;
+  padding-left: 26px !important;
+}
+
+.flx-card--top10 .flx-card__poster {
+  border-radius: var(--border-radius) !important;
+}
+
+.flx-card__title {
+  font-family: "Lexend", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: var(--text-primary) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: block !important;
+  margin: 0 0 4px !important;
+  text-decoration: none !important;
+  z-index: 1000 !important;
+}
+
+.flx-card__badges {
+  display: flex !important;
+  gap: 4px !important;
+  flex-wrap: wrap !important;
+}
+
+.flx-badge {
+  display: inline-block !important;
+  padding: 2px 6px !important;
+  border-radius: 3px !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  font-family: "Lexend", sans-serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  line-height: 1.4 !important;
+}
+
+.flx-badge--vf {
+  background: var(--badge-vf) !important;
+  color: #000 !important;
+}
+
+.flx-badge--vostfr {
+  background: var(--badge-vostfr) !important;
+  color: #000 !important;
+}
+
+.flx-badge--tf {
+  background: #4a9eff !important;
+  color: #fff !important;
+}
+
+.flx-badge--hd {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: var(--text-secondary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.flx-badge--exclu {
+  background: var(--badge-exclu) !important;
+  color: #fff !important;
+}
+
+.flx-badge--ep {
+  background: rgba(0, 0, 0, 0.7) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ============================================================
+   PAGE DETAIL HERO
+   ============================================================ */
+
+.flx-detail {
+  padding-top: var(--header-height) !important;
+}
+
+.flx-detail-hero {
+  position: relative !important;
+  min-height: min(50vh, 500px) !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  overflow: hidden !important;
+}
+
+.flx-detail-hero__backdrop {
+  position: absolute !important;
+  inset: 0 !important;
+  background-size: cover !important;
+  background-position: center 20% !important;
+  filter: blur(20px) brightness(0.4) !important;
+  transform: scale(1.1) !important;
+}
+
+.flx-detail-hero__gradient {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(
+    transparent 0%,
+    var(--bg-primary) 100%
+  ) !important;
+}
+
+.flx-detail-hero__content {
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  gap: 32px !important;
+  padding: 40px var(--row-padding) 48px !important;
+  width: 100% !important;
+  align-items: flex-end !important;
+}
+
+.flx-detail-hero__poster {
+  flex-shrink: 0 !important;
+  width: 160px !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+}
+
+.flx-detail-hero__poster img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+.flx-detail-hero__info {
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+.flx-detail-hero__title {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  margin: 0 0 12px !important;
+  line-height: 1.2 !important;
+}
+
+.flx-detail-hero__meta {
+  display: flex !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 16px !important;
+  font-size: 14px !important;
+  color: var(--text-secondary) !important;
+  align-items: center !important;
+}
+
+.flx-detail-hero__meta-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.flx-detail-hero__synopsis {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: var(--text-secondary) !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 4 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  margin: 0 0 20px !important;
+  max-width: 600px !important;
+}
+
+.flx-detail-hero__actions {
+  display: flex !important;
+  gap: 12px !important;
+}
+
+/* ============================================================
+   PLAYER SECTION
+   ============================================================ */
+
+.flx-player-section {
+  padding: 0 var(--row-padding) !important;
+  margin-bottom: 32px !important;
+}
+
+.flx-tabs {
+  display: flex !important;
+  gap: 4px !important;
+  margin-bottom: 16px !important;
+  border-bottom: 2px solid var(--bg-tertiary) !important;
+  padding-bottom: 0 !important;
+}
+
+.flx-tab {
+  padding: 10px 24px !important;
+  font-family: "Lexend", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: var(--text-muted) !important;
+  background: none !important;
+  border: none !important;
+  border-bottom: 3px solid transparent !important;
+  margin-bottom: -2px !important;
+  transition:
+    color 0.2s,
+    border-color 0.2s !important;
+  outline: none !important;
+}
+
+.flx-tab.flx-tab--active,
+.flx-tab.flx-focused {
+  color: var(--text-primary) !important;
+  border-bottom-color: var(--accent) !important;
+}
+
+.flx-episodes {
+  display: flex !important;
+  gap: 8px !important;
+  overflow-x: auto !important;
+  padding: 8px 0 16px !important;
+  scroll-snap-type: x mandatory !important;
+  scrollbar-width: none !important;
+  margin-bottom: 16px !important;
+}
+
+.flx-episodes::-webkit-scrollbar {
+  display: none !important;
+}
+
+.flx-episode {
+  flex-shrink: 0 !important;
+  padding: 8px 16px !important;
+  border-radius: 4px !important;
+  background: var(--bg-tertiary) !important;
+  color: var(--text-secondary) !important;
+  font-family: "Lexend", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  border: 2px solid transparent !important;
+
+  transition: all 0.2s ease !important;
+  outline: none !important;
+  scroll-snap-align: start !important;
+  white-space: nowrap !important;
+}
+
+.flx-episode.flx-episode--active {
+  background: var(--accent) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--accent) !important;
+}
+
+.flx-servers {
+  display: flex !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 16px !important;
+}
+
+.flx-server {
+  padding: 8px 20px !important;
+  border-radius: 4px !important;
+  background: var(--bg-tertiary) !important;
+  color: var(--text-secondary) !important;
+  font-family: "Lexend", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  border: 2px solid var(--bg-tertiary) !important;
+
+  transition: all 0.2s ease !important;
+  outline: none !important;
+}
+
+.flx-server.flx-server--active {
+  border-color: var(--focus-ring) !important;
+  color: var(--text-primary) !important;
+}
+
+.flx-player-wrap {
+  position: relative !important;
+  width: 100% !important;
+  padding-bottom: 56.25% !important;
+  background: #000 !important;
+  border-radius: var(--border-radius) !important;
+  overflow: hidden !important;
+}
+
+.flx-player-wrap iframe {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+}
+
+.flx-player-skeleton {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--bg-secondary) !important;
+  z-index: 1 !important;
+  border-radius: var(--border-radius) !important;
+}
+
+.flx-player-skeleton.flx-hidden {
+  display: none !important;
+}
+
+.flx-player-skeleton__icon {
+  font-size: 48px !important;
+  opacity: 0.3 !important;
+}
+
+/* ============================================================
+   PAGE TRANSITION OVERLAY
+   ============================================================ */
+
+.flx-page-transition {
+  position: fixed !important;
+  inset: 0 !important;
+  background: #000 !important;
+  z-index: 9999 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.flx-page-transition.flx-active {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+
+/* ============================================================
+   TOAST NOTIFICATIONS
+   ============================================================ */
+
+.flx-toast-container {
+  position: fixed !important;
+  bottom: 40px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 9000 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  pointer-events: none !important;
+}
+
+.flx-toast {
+  background: rgba(30, 30, 30, 0.95) !important;
+  color: var(--text-primary) !important;
+  padding: 12px 24px !important;
+  border-radius: 4px !important;
+  font-family: "Lexend", sans-serif !important;
+  font-size: 14px !important;
+  border-left: 3px solid var(--accent) !important;
+  opacity: 0 !important;
+  transform: translateY(10px) !important;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease !important;
+  white-space: nowrap !important;
+}
+
+.flx-toast.flx-toast--visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.flx-footer {
+  background: var(--bg-primary) !important;
+  padding: 32px var(--row-padding) !important;
+  text-align: center !important;
+  color: var(--text-muted) !important;
+  font-size: 12px !important;
+  font-family: "Lexend", sans-serif !important;
+  border-top: 1px solid var(--bg-tertiary) !important;
+  margin-top: 48px !important;
+}
+
+.flx-footer a {
+  color: var(--text-muted) !important;
+  text-decoration: none !important;
+  margin: 0 8px !important;
+}
+
+/* ============================================================
+   DESKTOP POINTER (orb + trainee)
+   ============================================================ */
+
+.flx-desktop-pointer.flx-input-mouse body {
+  cursor: none !important;
+}
+
+.flx-desktop-pointer.flx-input-mouse a,
+.flx-desktop-pointer.flx-input-mouse button,
+.flx-desktop-pointer.flx-input-mouse input,
+.flx-desktop-pointer.flx-input-mouse [role="button"],
+.flx-desktop-pointer.flx-input-mouse [data-flx-focusable] {
+  cursor: none !important;
+}
+
+.flx-cursor-orb,
+.flx-cursor-trail {
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%) !important;
+  pointer-events: none !important;
+  z-index: 999999 !important;
+  border-radius: 999px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition:
+    opacity 0.18s ease,
+    visibility 0.18s ease !important;
+}
+
+.flx-cursor-orb {
+  width: 18px !important;
+  height: 18px !important;
+  background: rgba(229, 9, 20, 0.92) !important;
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.24),
+    0 0 36px rgba(229, 9, 20, 0.62) !important;
+}
+
+.flx-cursor-trail {
+  width: 12px !important;
+  height: 12px !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+  filter: blur(0.4px) !important;
+}
+
+.flx-desktop-pointer.flx-input-mouse .flx-cursor-orb,
+.flx-desktop-pointer.flx-input-mouse .flx-cursor-trail {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* ============================================================
+   VIRTUAL SEARCH KEYBOARD
+   ============================================================ */
+
+.flx-vk {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 12000 !important;
+  background: rgba(0, 0, 0, 0.74) !important;
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px !important;
+}
+
+.flx-vk.flx-vk--open {
+  display: flex !important;
+}
+
+.flx-vk__panel {
+  width: min(1120px, 96vw) !important;
+  max-height: 90vh !important;
+  overflow: auto !important;
+  background: #111 !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 12px !important;
+  padding: 18px !important;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6) !important;
+}
+
+.flx-vk__title {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  margin-bottom: 12px !important;
+}
+
+.flx-vk__preview {
+  width: 100% !important;
+  min-height: 48px !important;
+  border-radius: 8px !important;
+  padding: 10px 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.24) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #fff !important;
+  font-size: 18px !important;
+  font-family: "Lexend", sans-serif !important;
+  margin-bottom: 14px !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 2px !important;
+}
+
+.flx-vk__preview-text {
+  display: inline-block !important;
+}
+
+.flx-vk__caret {
+  display: inline-block !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  animation: flx-caret-blink 1s steps(1) infinite !important;
+}
+
+@keyframes flx-caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.flx-vk__grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.flx-vk__row {
+  display: grid !important;
+  grid-template-columns: repeat(10, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+}
+
+.flx-vk-key {
+  height: 48px !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
+  font-family: "Lexend", sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  outline: none !important;
+  transition:
+    transform 0.14s ease,
+    background 0.14s ease !important;
+}
+
+.flx-vk-key--cta {
+  background: rgba(229, 9, 20, 0.18) !important;
+  border-color: rgba(229, 9, 20, 0.65) !important;
+}
+
+.flx-vk-key--mode {
+  background: rgba(80, 80, 80, 0.3) !important;
+}
+
+.flx-vk-key.flx-focused {
+  transform: scale(1.04) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.4),
+    0 0 18px rgba(255, 255, 255, 0.24) !important;
+}
+
+/* ============================================================
+   SEARCH PAGE UI
+   ============================================================ */
+
+.flx-search-page .search-page {
+  padding: 18px var(--row-padding) 8px !important;
+}
+
+.flx-search-page .searchtable {
+  background: rgba(18, 18, 18, 0.88) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 12px !important;
+  padding: 14px !important;
+  margin-bottom: 16px !important;
+}
+
+.flx-search-page .searchtable table,
+.flx-search-page .searchtable tbody,
+.flx-search-page .searchtable tr,
+.flx-search-page .searchtable td {
+  display: block !important;
+  width: 100% !important;
+}
+
+.flx-search-page .searchtable td.search {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  align-items: center !important;
+}
+
+.flx-search-page .searchtable input[type="text"] {
+  width: min(560px, 96vw) !important;
+  height: 46px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  background: rgba(0, 0, 0, 0.45) !important;
+  color: #fff !important;
+  padding: 0 14px !important;
+  font-size: 16px !important;
+}
+
+.flx-search-page .searchtable input[type="button"],
+.flx-search-page .searchtable input[type="submit"],
+.flx-search-page .searchtable button {
+  height: 42px !important;
+  border-radius: 999px !important;
+  padding: 0 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: rgba(255, 255, 255, 0.09) !important;
+  color: #fff !important;
+  font-family: "Lexend", sans-serif !important;
+  font-size: 14px !important;
+}
+
+.flx-search-page .searchtable input[type="button"]:focus,
+.flx-search-page .searchtable input[type="submit"]:focus,
+.flx-search-page .searchtable button:focus,
+.flx-search-page .searchtable input[type="text"]:focus {
+  box-shadow:
+    0 0 0 2px rgba(229, 9, 20, 0.45),
+    0 0 18px rgba(229, 9, 20, 0.28) !important;
+  border-color: rgba(229, 9, 20, 0.72) !important;
+  outline: none !important;
+}
+
+.flx-search-page .flx-search-info,
+.flx-search-page .berrors {
+  color: rgba(255, 255, 255, 0.86) !important;
+  margin: 0 0 12px !important;
+}
+
+/* ============================================================
+   SECTION TITRE (detail page)
+   ============================================================ */
+
+.flx-section-title {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  padding: 0 var(--row-padding) !important;
+  margin: 32px 0 12px !important;
+  color: var(--text-primary) !important;
+}

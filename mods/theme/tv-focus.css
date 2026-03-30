@@ -1,0 +1,169 @@
+/* ============================================================
+   TV FOCUS STYLES - Navigation telecommande
+   ============================================================ */
+
+/* Pas de focus outline natif du navigateur */
+*:focus {
+  outline: none !important;
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+
+.flx-card:focus,
+.flx-input-mouse .flx-card:hover,
+.flx-card.flx-focused {
+  transform: scale(1.08) !important;
+  z-index: 10 !important;
+  transition-delay: 0s !important;
+  outline: none !important;
+}
+
+.flx-card:focus .flx-card__poster-wrap,
+.flx-input-mouse .flx-card:hover .flx-card__poster-wrap,
+.flx-card.flx-focused .flx-card__poster-wrap {
+  box-shadow:
+    0 0 18px rgba(229, 9, 20, 0.45),
+    0 0 34px rgba(229, 9, 20, 0.25),
+    0 12px 28px rgba(0, 0, 0, 0.55) !important;
+}
+
+.flx-card--top10:focus .flx-card__poster-wrap,
+.flx-input-mouse .flx-card--top10:hover .flx-card__poster-wrap,
+.flx-card--top10.flx-focused .flx-card__poster-wrap {
+  box-shadow: none !important;
+}
+
+.flx-card--top10:focus .flx-card__poster,
+.flx-input-mouse .flx-card--top10:hover .flx-card__poster,
+.flx-card--top10.flx-focused .flx-card__poster {
+  box-shadow:
+    0 0 18px rgba(229, 9, 20, 0.45),
+    0 0 34px rgba(229, 9, 20, 0.25),
+    0 12px 28px rgba(0, 0, 0, 0.55) !important;
+}
+
+.flx-card:focus .flx-card__overlay,
+.flx-input-mouse .flx-card:hover .flx-card__overlay,
+.flx-card.flx-focused .flx-card__overlay {
+  opacity: 1 !important;
+}
+
+/* ============================================================
+   BOUTONS
+   ============================================================ */
+
+.flx-btn:focus,
+.flx-input-mouse .flx-btn:hover,
+.flx-btn.flx-focused {
+  outline: 3px solid var(--focus-ring) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 20px var(--focus-glow) !important;
+  transform: scale(1.04) !important;
+}
+
+.flx-btn--play:focus,
+.flx-input-mouse .flx-btn--play:hover,
+.flx-btn--play.flx-focused {
+  background: var(--text-primary) !important;
+}
+
+/* ============================================================
+   TABS LANGUE
+   ============================================================ */
+
+.flx-tab:focus,
+.flx-input-mouse .flx-tab:hover,
+.flx-tab.flx-focused {
+  color: var(--text-primary) !important;
+  border-bottom-color: var(--accent) !important;
+  outline: none !important;
+}
+
+/* ============================================================
+   EPISODES
+   ============================================================ */
+
+.flx-episode:focus,
+.flx-input-mouse .flx-episode:hover,
+.flx-episode.flx-focused {
+  background: var(--accent) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--accent) !important;
+  transform: scale(1.05) !important;
+  outline: none !important;
+}
+
+/* ============================================================
+   SERVEURS / LECTEURS
+   ============================================================ */
+
+.flx-server:focus,
+.flx-input-mouse .flx-server:hover,
+.flx-server.flx-focused {
+  border-color: var(--focus-ring) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-primary) !important;
+  box-shadow: 0 0 12px var(--focus-glow) !important;
+  outline: none !important;
+}
+
+/* ============================================================
+   LIENS GENERIQUES
+   ============================================================ */
+
+.flx-focusable:focus,
+.flx-input-mouse .flx-focusable:hover,
+.flx-focusable.flx-focused {
+  outline: 2px solid var(--focus-ring) !important;
+  outline-offset: 2px !important;
+  border-radius: 3px !important;
+}
+
+/* ============================================================
+   HEADER ELEMENTS
+   ============================================================ */
+
+.flx-logo:focus,
+.flx-input-mouse .flx-logo:hover,
+.flx-logo.flx-focused {
+  outline: 2px solid var(--focus-ring) !important;
+  outline-offset: 4px !important;
+  border-radius: 2px !important;
+}
+
+.flx-profile:focus,
+.flx-input-mouse .flx-profile:hover,
+.flx-profile.flx-focused {
+  outline: 2px solid var(--focus-ring) !important;
+  outline-offset: 4px !important;
+  border-radius: 2px !important;
+}
+
+.flx-search input:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px var(--focus-ring) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* ============================================================
+   SEE ALL LINKS
+   ============================================================ */
+
+.flx-row__see-all:focus,
+.flx-input-mouse .flx-row__see-all:hover,
+.flx-row__see-all.flx-focused {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 3px !important;
+  border-radius: 2px !important;
+  color: var(--accent-hover) !important;
+}
+
+/* ============================================================
+   ZONE FOCUS INDICATOR (debug, masque en prod)
+   ============================================================ */
+
+.flx-zone-indicator {
+  display: none;
+}
