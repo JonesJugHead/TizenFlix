@@ -47,23 +47,6 @@ Depuis la racine:
 4. modifier le code dans `mods/`
 5. lancer `npm run build` avant publication
 
-## Publication GitHub (recommande)
-
-### A publier
-
-- `mods/`, `service/`, `dev/`, `dist/`
-- `package.json`, `README.md`, `.gitignore`, `script.ps1`
-
-### A eviter de publier (ou a rendre optionnel)
-
-- `original-website/` et `base/` si ces dossiers contiennent du contenu tiers, captures ou HTML non redistribuable
-- tout fichier local de debug / export / secrets
-
-Si tu veux garder le contexte sans exposer les snapshots, tu peux:
-
-- conserver seulement une version minimale anonymisee
-- ou deplacer les references privees hors du repo public
-
 ## Notes
 
 - Cible principale: TV Samsung (Tizen), donc priorite a la lisibilite et au focus clavier/telecommande.
